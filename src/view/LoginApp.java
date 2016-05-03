@@ -27,18 +27,17 @@ public class LoginApp extends Application {
 		pane.setPrefSize(400, 300);
 		Scene scene = new Scene(pane);
 		primaryStage.setScene(scene);
-		pane.setStyle("-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, blue 0%, silver 100%);");
+		pane.setStyle("-fx-background-color: silver;");
 		primaryStage.show();
 
 		pane.getChildren().addAll(txLogin, txSenha, btEntrar, btSair);
-		txLogin.setLayoutX((pane.getWidth() - txLogin.getWidth()) / 2);
+		//txLogin.setLayoutX((pane.getWidth() - txLogin.getWidth()) / 2);
 		txLogin.setLayoutY(50);
-		txSenha.setLayoutX((pane.getWidth() - txSenha.getWidth()) / 2);
+		//txSenha.setLayoutX((pane.getWidth() - txSenha.getWidth()) / 2);
 		txSenha.setLayoutY(100);
-		btEntrar.setLayoutX(
-		(pane.getWidth() - btEntrar.getWidth()) / 2);
+		//btEntrar.setLayoutX((pane.getWidth() - btEntrar.getWidth()) / 2);
 		btEntrar.setLayoutY(150);
-		btSair.setLayoutX((pane.getWidth() - btSair.getWidth()) / 2);
+		//btSair.setLayoutX((pane.getWidth() - btSair.getWidth()) / 2);
 		btSair.setLayoutY(200);
 
 	}
