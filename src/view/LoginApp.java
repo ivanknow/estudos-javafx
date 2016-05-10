@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -23,6 +25,14 @@ public class LoginApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+		
+		 /*Parent root = FXMLLoader.load(getClass().getResource("com/srp/view/reconhecimento_placas.fxml"));
+		 primaryStage.setTitle("FXML Welcome");
+		 primaryStage.setScene(new Scene(root, 300, 275));
+		 primaryStage.show();*/
+	
+
+		
 		initComponents();
 		initListeners();
 		Scene scene = new Scene(pane);
@@ -38,7 +48,7 @@ public class LoginApp extends Application {
 	private void initComponents() {
 		pane = new AnchorPane();
 		pane.setPrefSize(400, 300);
-		pane.setStyle("-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, blue 0%, silver 100%);");
+		pane.setStyle("-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, blue 0%, green 100%);");
 
 		txLogin = new TextField();
 		txSenha = new PasswordField();
@@ -85,8 +95,10 @@ public class LoginApp extends Application {
 	}
 
 	private void logar() {
-		if (txLogin.getText().equals("admin") && txSenha.getText().equals("casadocodigo")) {
-			// TODO Abrir a tela VitrineApp
+		if (txLogin.getText().equals("admin") && txSenha.getText().equals("123")) {
+			new VitrineApp().start(new Stage());
+			LoginApp.getStage().close();
+
 		} else {
 			JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
